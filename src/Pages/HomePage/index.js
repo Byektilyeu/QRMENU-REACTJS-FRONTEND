@@ -5,6 +5,7 @@ import GridItem from "../../Components/grid-item";
 // import { getAllPosts } from "lib/api";
 import Layout from "../../Components/layout";
 import Intro from "../../Components/intro";
+import MenuList from "../../Components/MenuList";
 
 export default function HomePage({ posts }) {
   return (
@@ -16,6 +17,9 @@ export default function HomePage({ posts }) {
       </Row>
 
       <hr />
+      <div>
+        <MenuList />
+      </div>
       {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
       <Row className="mb-5">
         <Col md="4">

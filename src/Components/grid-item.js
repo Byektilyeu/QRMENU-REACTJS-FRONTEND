@@ -1,28 +1,29 @@
 import { Card } from "react-bootstrap";
-import card from "../Assets/card.jpg";
+// import card from "../Assets/card.jpg";
+import menu1 from "../Assets/menu1.jpg";
 
 export default () => {
   return (
     <Card className={`fj-card`} style={{ marginBottom: "20px" }}>
       <div className="card-body-wrapper">
-        <Card.Header className="d-flex flex-row">
-          {/* <img
+        {/* <Card.Header className="d-flex flex-row"> */}
+        {/* <img
             src=""
             className="rounded-circle mr-3"
             height="50px"
             width="50px"
             alt=""
           /> */}
-          <div>
+        {/* <div>
             <Card.Title className="font-weight-bold mb-1">
               Card title
             </Card.Title>
             <Card.Text className="card-date">Date</Card.Text>
           </div>
-        </Card.Header>
+        </Card.Header> */}
 
         <div className="view overlay">
-          <Card.Img src={card} alt="Card image" />
+          <Card.Img src={menu1} alt="Card image" />
         </div>
         <Card.Body>
           <Card.Title className="card-main-title">Title</Card.Title>

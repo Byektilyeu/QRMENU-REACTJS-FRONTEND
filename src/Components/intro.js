@@ -14,12 +14,10 @@ export default () => (
       src={logo}
       alt="Generic placeholder"
     />
-
+    Restaurantiin logo
     <Media.Body>
       <h5 className="font-weight-bold mb-0">Рестораны menu</h5>
-      {/* <p className="welcome-text">
-        
-      </p> */}
+      <p className="welcome-text">Нэмэлт тайлбар</p>
     </Media.Body>
   </Media>
 );
