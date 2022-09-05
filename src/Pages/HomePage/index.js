@@ -1,45 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 
-import GridItem from "../../Components/grid-item";
-// import { getAllPosts } from "lib/api";
+import { Link } from "react-router-dom";
+
+import GridItem from "../../Components/CategGridItem";
 import Layout from "../../Components/layout";
 import Intro from "../../Components/intro";
-import MenuList from "../../Components/MenuList";
 
-export default function HomePage({ posts }) {
+import { SERVERAPI } from "../../constants/routes";
+import axios from "axios";
+
+export default function HomePage(props) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories();
+  }, []);
+
+  const getCategories = () => {
+    axios
+      .get(`${SERVERAPI}/api/v1/categories`)
+      .then((result) => {
+        setCategories(result.data.data);
+      })
+      .catch((err) => {
+        console.log("err: ", err.message);
+      });
+  };
+
   return (
     <Layout>
-      <Row>
+      {/* <div class="row" style="background-color:lightcyan;">
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">.col-xs-6</div>
+      </div> */}
+
+      {/* <Row>
         <Col md="12">
           <Intro />
         </Col>
-      </Row>
-
+      </Row> */}
       <hr />
-      <div>
-        <MenuList />
-      </div>
-      {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
-      <Row className="mb-5">
-        <Col md="4">
-          <GridItem />
-        </Col>
-        <Col md="4">
-          <GridItem />
-        </Col>
-        <Col md="4">
-          <GridItem />
-        </Col>
-        <Col md="4">
-          <GridItem />
-        </Col>
-        <Col md="4">
-          <GridItem />
-        </Col>
-        <Col md="4">
-          <GridItem />
-        </Col>
+
+      <Row>
+        {categories.map((el) => (
+          <Col xs="6" md="3" key={el.Ident}>
+            <Link
+              to={`/${props.match.params.hallplansid}/${props.match.params.tableid}/${el.Ident}/foods`}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <GridItem Comment={el.Comment} Name={el.Name} Ident={el.Ident} />
+            </Link>
+          </Col>
+        ))}
       </Row>
     </Layout>
   );

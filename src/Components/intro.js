@@ -8,16 +8,18 @@ export default () => (
   <Media className="mb-4 admin-intro">
     <Image
       roundedCircle
-      width={64}
-      height={64}
-      className="mr-3"
+      width={48}
+      height={48}
       src={logo}
       alt="Generic placeholder"
     />
-    Restaurantiin logo
-    <Media.Body>
+    {/* <p className="font-monospace" style={{ fontSize: 15 }}>
+      Restaurantiin logo
+    </p> */}
+
+    {/* <Media.Body>
       <h5 className="font-weight-bold mb-0">Рестораны menu</h5>
       <p className="welcome-text">Нэмэлт тайлбар</p>
-    </Media.Body>
+    </Media.Body> */}
   </Media>
 );
