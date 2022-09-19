@@ -11,9 +11,6 @@ export default ({ children }) => {
     <Container style={{ backgroundColor: "white" }}>
       <MyNavbar />
       <Intro />
-      <div style={{ height: "10px" }}>
-        <DarkMode />
-      </div>
       <div className="blog-detail-page">
         <div className={`page-wrapper`}>{children}</div>
       </div>

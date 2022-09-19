@@ -10,13 +10,16 @@ import CategoryFoods from "./Pages/CategoryFoods";
 import * as ROUTES from "./constants/routes";
 import HallPlan from "./Pages/HallPlan";
 import TablePage from "./Pages/TablePage";
-// import TPage from "./Pages/TPage";
+import demoCategory from "./Pages/demoCategory";
+import AllMenuPage from "./Pages/AllMenuPage";
+// import TPage from "./Pages/TPage";s
 
 const App = () => {
   return (
     <BrowserRouter>
       <div>
         <Switch>
+          <Route exact path={ROUTES.DEMO} component={AllMenuPage} />
           <Route exact path={ROUTES.HALLPLAN} component={HallPlan} />
           <Route exact path={ROUTES.HOMEPAGE} component={HomePage} />
           <Route exact path={ROUTES.CATEGORYFOODS} component={CategoryFoods} />
