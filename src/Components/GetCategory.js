@@ -16,7 +16,7 @@ function GetCategory(props) {
 
   const getCategMenu = (catID) => {
     axios
-      .post("http://10.0.0.116:8010/api/v1/category", { category: catID })
+      .post("http://10.0.0.107:8010/api/v1/category", { category: catID })
       .then((result) => {
         setCateg(result.data.data);
         console.log("ahhcjahbchbhac", result.data.data);
@@ -29,15 +29,19 @@ function GetCategory(props) {
   return (
     <div>
       <p>{props.data.Name}</p>
-      {categ.map((el) => (
-        <GridItem
-          Comment={el.Comment}
-          AltName={el.AltName}
-          Name={el.Name}
-          Price={el.menuPriceValue}
-          Instruct={el.Instruct}
-        />
-      ))}
+      <Row className="mb-5">
+        {categ.map((el) => (
+          <Col xs="6" md="3" key={el.menuIdent} style={{ color: "black" }}>
+            <GridItem
+              Comment={el.Comment}
+              AltName={el.AltName}
+              Name={el.Name}
+              Price={el.menuPriceValue}
+              Instruct={el.Instruct}
+            />
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 }
